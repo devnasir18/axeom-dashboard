@@ -14,6 +14,9 @@ import { FileUploadArea } from "@/components/file-upload-area";
 import { PriorityCards } from "@/components/priority-cards";
 import { SuggestionModal } from "@/components/suggestion-modal";
 import { ClientDirectory } from "@/components/client-directory";
+import { MessagesView } from "@/components/views/messages-view";
+import { FilesView } from "@/components/views/files-view";
+import { SettingsView } from "@/components/views/settings-view";
 import type { DashboardState } from "@/lib/types";
 import { EMPTY_STATE } from "@/lib/types";
 
@@ -43,6 +46,16 @@ export default function Page() {
   const handleSuggestion = useCallback(() => {
     setModalOpen(false);
     setToast({ message: "Suggestion queued — awaiting your approval", type: "info" });
+    setTimeout(() => setToast(null), 4000);
+  }, []);
+
+  const handleReset = useCallback(() => {
+    setState({ ...EMPTY_STATE });
+    setActiveTab("dashboard");
+    setToast({
+      message: "Uploaded cache cleared — dashboard reset to empty state",
+      type: "info",
+    });
     setTimeout(() => setToast(null), 4000);
   }, []);
 
@@ -122,7 +135,7 @@ export default function Page() {
 
         {activeTab === "dashboard" ? (
           <section>
-            <div className="flex items-center justify-between mb-6">
+            <div className="mb-6 flex items-center justify-between">
               <h2 className="text-2xl font-bold tracking-tight">Priority actions</h2>
               <p className="text-sm text-zinc-500">Review within 10 seconds</p>
             </div>
@@ -130,21 +143,19 @@ export default function Page() {
           </section>
         ) : activeTab === "clients" ? (
           <section id="clients">
-            <div className="flex items-center justify-between mb-6">
+            <div className="mb-6 flex items-center justify-between">
               <h2 className="text-2xl font-bold tracking-tight">Client directory</h2>
               <p className="text-sm text-zinc-500">Unified client profiles</p>
             </div>
             <ClientDirectory clients={state.clients} />
           </section>
-        ) : (
-          <section className="text-center py-20">
-            <div className="flex flex-col items-center gap-3">
-              <Mail className="w-10 h-10 text-zinc-400" />
-              <h3 className="text-lg font-semibold text-zinc-900">{activeTab}</h3>
-              <p className="text-zinc-500">Coming soon</p>
-            </div>
-          </section>
-        )}
+        ) : activeTab === "messages" ? (
+          <MessagesView messages={state.messages} />
+        ) : activeTab === "files" ? (
+          <FilesView state={state} />
+        ) : activeTab === "settings" ? (
+          <SettingsView state={state} onReset={handleReset} />
+        ) : null}
       </main>
 
       <footer className="border-t border-zinc-200 bg-white/50 backdrop-blur px-6 py-4 md:px-8 lg:px-12">
