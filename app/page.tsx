@@ -60,43 +60,51 @@ export default function Page() {
       />
 
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-zinc-200">
-        <div className="flex flex-col gap-3 border-b border-zinc-100 px-6 py-4 md:px-8 lg:px-12">
-          <div className="flex items-center justify-between">
+      <header className="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/75 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-3.5 md:px-8 lg:px-12">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-red-500 shadow-md">
-                <span className="text-white font-bold">A</span>
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-red-500 shadow-md shadow-amber-500/20 ring-1 ring-white/40">
+                <span className="text-sm font-bold tracking-tight text-white">
+                  A
+                </span>
               </div>
-              <div>
-                <h1 className="text-xl font-bold tracking-tight">Axeom Studio</h1>
-                <p className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <h1 className="truncate text-lg font-bold tracking-tight text-zinc-900 sm:text-xl">
+                    Axeom Studio
+                  </h1>
+                  <span className="hidden items-center gap-1.5 rounded-full border border-emerald-200/80 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 sm:inline-flex">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    live
+                  </span>
+                </div>
+                <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-400">
                   Operational dashboard
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 bg-white text-xs font-medium text-zinc-600">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                All systems operational
-              </span>
+            <div className="flex items-center gap-2 sm:shrink-0">
               <FileUploadArea onFilesParsed={handleFilesParsed} />
             </div>
           </div>
 
-          <nav className="flex gap-1 overflow-x-auto pb-2 no-scrollbar">
+          <nav className="no-scrollbar -mx-1 flex gap-1 overflow-x-auto px-1 pb-0.5">
             {NAV.map((item) => (
               <button
                 key={item.name}
-                onClick={() => setActiveTab(item.name.toLowerCase().replace(" ", "-"))}
+                onClick={() =>
+                  setActiveTab(item.name.toLowerCase().replace(" ", "-"))
+                }
                 className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all",
+                  "flex shrink-0 items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium transition-all duration-150",
                   activeTab === item.name.toLowerCase().replace(" ", "-")
-                    ? "bg-amber-50 text-amber-700 border border-amber-100 shadow-sm"
-                    : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100"
+                    ? "bg-zinc-900 text-white shadow-sm"
+                    : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900"
                 )}
               >
-                <item.icon className="w-4 h-4" />
+                <item.icon className="h-4 w-4" />
                 {item.name}
               </button>
             ))}

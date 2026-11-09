@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { Upload, Plus, FileText, CheckCircle2, AlertCircle } from "lucide-react";
+import { useRef, useState } from "react";
+import {
+  Upload,
+  FileText,
+  CheckCircle2,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { parseUploadedFile, buildDashboardState } from "@/lib/parsers";
-import type { DashboardState } from "@/lib/types";
+import { EMPTY_STATE, type DashboardState } from "@/lib/types";
 
 export interface FileUploadAreaProps {
   onFilesParsed: (state: DashboardState) => void;
@@ -13,9 +19,18 @@ export interface FileUploadAreaProps {
 export function FileUploadArea({ onFilesParsed }: FileUploadAreaProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [parsing, setParsing] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFiles = async (selected: File[]) => {
-    const next = [...files, ...selected];
+    const accepted = selected.filter(
+      (f) =>
+        f.type === "text/csv" ||
+        f.name.endsWith(".csv") ||
+        f.name.endsWith(".txt")
+    );
+    if (accepted.length === 0) return;
+    const next = [...files, ...accepted];
     setFiles(next);
     setParsing(true);
     try {
@@ -28,94 +43,128 @@ export function FileUploadArea({ onFilesParsed }: FileUploadAreaProps) {
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    const dropped = Array.from(e.dataTransfer.files).filter(
-      (f) => f.type === "text/csv" || f.name.endsWith(".csv") || f.name.endsWith(".txt")
-    );
-    if (dropped.length > 0) handleFiles(dropped);
+    setIsDragging(false);
+    const dropped = Array.from(e.dataTransfer.files);
+    if (dropped.length > 0) void handleFiles(dropped);
   };
+
+  const handleClear = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setFiles([]);
+    onFilesParsed({ ...EMPTY_STATE });
+    if (inputRef.current) inputRef.current.value = "";
+  };
+
+  const hasFiles = files.length > 0;
+  const statusLabel = parsing
+    ? "Parsing…"
+    : hasFiles
+      ? `${files.length} file${files.length !== 1 ? "s" : ""} loaded`
+      : "CSV or TXT";
 
   return (
     <div
-      onDragOver={(e) => e.preventDefault()}
-      onDragLeave={(e) => e.preventDefault()}
+      role="button"
+      tabIndex={0}
+      aria-label="Upload CSV or text files"
+      onClick={() => !parsing && inputRef.current?.click()}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (!parsing) inputRef.current?.click();
+        }
+      }}
+      onDragOver={(e) => {
+        e.preventDefault();
+        setIsDragging(true);
+      }}
+      onDragLeave={(e) => {
+        e.preventDefault();
+        setIsDragging(false);
+      }}
       onDrop={handleDrop}
       className={cn(
-        "relative rounded-3xl border-2 border-dashed transition-all duration-200",
-        parsing || files.length > 0
-          ? "border-amber-500/50 bg-amber-50/50"
-          : "border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50"
+        "group relative flex min-w-[220px] max-w-[320px] cursor-pointer select-none items-center gap-3 rounded-2xl border px-3.5 py-2.5 transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40",
+        isDragging
+          ? "scale-[1.02] border-amber-400 bg-amber-50 shadow-md shadow-amber-100/60"
+          : hasFiles || parsing
+            ? "border-amber-200/80 bg-gradient-to-r from-amber-50/80 to-white shadow-sm hover:border-amber-300 hover:shadow-md"
+            : "border-zinc-200/80 bg-white/90 shadow-sm hover:border-zinc-300 hover:bg-white hover:shadow-md"
       )}
     >
-      <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-200" aria-hidden="true">
-        <div className="flex items-center justify-center h-full w-full">
-          <div className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg border border-zinc-200 flex items-center gap-2 text-zinc-700 text-sm font-medium uppercase tracking-wider">
-            <Upload className="w-4 h-4" /> Drop files here
-          </div>
-        </div>
-      </div>
-
       <input
+        ref={inputRef}
         type="file"
         multiple
         accept=".csv,.txt"
         className="sr-only"
         onChange={(e) => {
-          if (e.target.files) handleFiles(Array.from(e.target.files));
+          if (e.target.files) void handleFiles(Array.from(e.target.files));
         }}
       />
 
-      <div className="pt-10 px-6 text-center sm:pt-12">
-        <div className="flex items-center justify-center">
-          <Plus className="h-8 w-8 text-zinc-500" />
-          <FileText
-            className={cn(
-              "h-8 w-8 ml-2",
-              parsing || files.length > 0 ? "text-amber-600" : "text-zinc-500"
-            )}
-          />
-        </div>
-        <h3 className="mt-2 text-sm font-semibold text-zinc-900">
-          Add new files
-        </h3>
-        <p className="mt-1 text-sm text-zinc-500">
-          Upload {files.length > 0 ? files.length : "multiple"} CSV or text file{files.length !== 1 ? "s" : ""}
-          {parsing ? " — parsing…" : ""}
-        </p>
-        {parsing && (
-          <p className="mt-1 text-xs text-amber-600 font-medium flex items-center justify-center gap-1">
-            <CheckCircle2 className="w-3 h-3" /> Parsing {files.length} file(s)…
-          </p>
+      <div
+        className={cn(
+          "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors duration-200",
+          isDragging
+            ? "bg-amber-500 text-white"
+            : hasFiles || parsing
+              ? "bg-amber-100 text-amber-700"
+              : "bg-zinc-100 text-zinc-600 group-hover:bg-zinc-900 group-hover:text-white"
         )}
-        <p className="mt-2 text-xs text-zinc-400">
-          Supports: bookings.csv, invoices.csv, leads.csv, payments.csv,
-          production_board.csv, costs.csv, team.csv, messages.txt
-        </p>
+      >
+        {parsing ? (
+          <Loader2 className="h-4 w-4 animate-spin" />
+        ) : hasFiles ? (
+          <FileText className="h-4 w-4" />
+        ) : (
+          <Upload className="h-4 w-4" />
+        )}
       </div>
 
-      {files.length > 0 && !parsing && (
-        <div className="absolute top-4 right-4 flex gap-2">
-          <button
-            onClick={() => {
-              setFiles([]);
-              onFilesParsed({
-                bookings: [],
-                invoices: [],
-                leads: [],
-                payments: [],
-                productionTasks: [],
-                costs: [],
-                team: [],
-                messages: [],
-                clients: [],
-                loaded: true,
-                fileCount: 0,
-              });
-            }}
-            className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-red-50 text-red-700 text-xs font-semibold hover:bg-red-100 transition-colors"
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2">
+          <span className="truncate text-sm font-semibold text-zinc-900">
+            {isDragging ? "Drop to upload" : "Add files"}
+          </span>
+          <span
+            className={cn(
+              "inline-flex shrink-0 items-center gap-1 rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
+              parsing
+                ? "bg-amber-100 text-amber-700"
+                : hasFiles
+                  ? "bg-emerald-100 text-emerald-700"
+                  : "bg-zinc-100 text-zinc-500"
+            )}
           >
-            <AlertCircle className="w-3 h-3" /> Clear all
-          </button>
+            {parsing ? (
+              <>
+                <Loader2 className="h-2.5 w-2.5 animate-spin" />
+                parsing
+              </>
+            ) : hasFiles ? (
+              <>
+                <CheckCircle2 className="h-2.5 w-2.5" />
+                ready
+              </>
+            ) : (
+              "click or drop"
+            )}
+          </span>
         </div>
+        <p className="truncate text-xs text-zinc-500">{statusLabel}</p>
+      </div>
+
+      {hasFiles && !parsing && (
+        <button
+          type="button"
+          onClick={handleClear}
+          className="shrink-0 rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-red-50 hover:text-red-600"
+          aria-label="Clear uploaded files"
+          title="Clear all"
+        >
+          <AlertCircle className="h-4 w-4" />
+        </button>
       )}
     </div>
   );
