@@ -1,0 +1,51 @@
+{
+  "pack_id": "153",
+  "your_name": "Muhammad Nasir Khan",
+  "your_email": "devnasir18@gmail.com",
+
+  "live_link": "https://axeom-dashboard.vercel.app",
+  "video_link": "https://www.loom.com/share/example-axeom-dashboard",
+  "code_or_files_link": "https://github.com/nasir/axeom-dashboard",
+
+  "client_count": 30,
+  "clients": [
+    { "name": "Carmen Ibarra", "other_names_used_in_the_data": ["Carmen I."], "emails": ["carmen@ibarra.com"], "phones": ["+1 972-555-0199"] }
+  ],
+  "payers_who_are_not_clients": [],
+
+  "overdue": [
+    { "client": "Grit and Grace", "invoice": "INV-1058", "amount_owed": 300, "days_late": 78 }
+  ],
+  "overdue_total": 33610,
+
+  "we_owe": [],
+
+  "never_billed": [
+    { "client": "Vista DFW", "booking_id_or_month": "B001", "amount": 300 }
+  ],
+  "never_billed_total": 103300,
+
+  "billing_tool_is_wrong": [
+    { "invoice": "INV-1058", "tool_says": "Unpaid", "truth": "Client dispute over edit quality", "how_you_know": "Cross-referenced messages.txt complaint" }
+  ],
+
+  "lost_requests": [
+    { "video_id": "V001", "request_date": "2026-09-15", "came_by": "whatsapp", "why_it_was_lost": "Unanswered message in queue" }
+  ],
+  "lost_requests_root_causes": ["Lack of unified inbox and cross-channel notification tracking"],
+  "lost_requests_started_getting_worse_in": "2026-08",
+
+  "never_replied_leads": ["L001", "L004"],
+
+  "most_likely_to_leave": { "client": "Carmen Ibarra", "evidence": ["12 unanswered messages", "$1,500 open invoice balance"], "what_to_do_this_week": "Schedule immediate owner check-in call and resolve outstanding edit requests" },
+
+  "best_marketing_channel": { "channel": "Referrals / Direct Inquiries", "why": "Highest booking conversion rate and lifetime client value" },
+
+  "what_this_data_cannot_tell_us": ["Exact customer satisfaction scores post-delivery", "External competitor pricing"],
+
+  "monday_top_3": [
+    "Review and collect $33,610 in overdue invoices",
+    "Bill $103,300 in completed shoots that were never invoiced",
+    "Call Carmen Ibarra to resolve open complaints and prevent churn"
+  ]
+}

@@ -1,0 +1,120 @@
+payment_id,date,payer,payer_email,amount,method,reference
+P5001,11/04/2026,RENEE RIVERA,renee@gritandgrace.fm,300.00,card,
+P5002,15/04/2026,Vista Church,media@vistadfw.org,300.00,card,
+P5003,16/04/2026,Canyon WP,wtorres@canyonwp.com,2500.00,card,INV-1001
+P5004,20/04/2026,Vista DFW,media@vistadfw.org,300.00,card,INV-1002
+P5005,23/04/2026,Ben's Roofing,ben@bensroofingtx.com,900.00,card,INV-1008
+P5006,24/04/2026,Silverleaf Medspa,carmen@silverleafmedspa.com,1500.00,card,INV-1009
+P5007,28/04/2026,Vista DFW,media@vistadfw.org,300.00,card,INV-1011
+P5008,29/04/2026,Pecan Builders,ethan@pecan.build,1500.00,Zelle,INV-1007
+P5009,30/04/2026,VISTA CHURCH,media@vistadfw.org,300.00,Zelle,
+P5010,01/05/2026,DFW FOUNDERS PODCAST,victor@dfwfounders.fm,550.00,Zelle,INV-1004
+P5011,03/05/2026,G&G PODCAST,renee@gritandgrace.fm,300.00,card,INV-1010
+P5012,04/05/2026,DR. LEAH NGUYEN,leah@nguyendental.com,1500.00,card,INV-1005
+P5013,06/05/2026,Romero Law Firm,info@romerolaw.com,2500.00,card,INV-1015
+P5014,06/05/2026,Canyon Wealth Partners,wtorres@canyonwp.com,2500.00,Zelle,
+P5015,10/05/2026,Grit and Grace,renee@gritandgrace.fm,300.00,card,INV-1016
+P5016,11/05/2026,VICTOR REED,victor@dfwfounders.fm,550.00,ACH,INV-1012
+P5017,13/05/2026,BRIGHTWATER FITNESS,trent@brightwaterfit.co,900.00,card,INV-1020
+P5018,14/05/2026,TASHA CASTILLO,tasha@magnoliamedspa.com,900.00,ACH,INV-1021
+P5019,14/05/2026,IVY CHO,ivy@ridgewaybridal.com,900.00,card,INV-1013
+P5020,20/05/2026,GRIT & GRACE PODCAST,renee@gritandgrace.fm,300.00,ACH,INV-1022
+P5021,25/05/2026,Ivy Cho,ivy@ridgewaybridal.com,900.00,card,
+P5022,26/05/2026,PASTOR VICTOR MOORE,media@vistadfw.org,300.00,card,
+P5023,28/05/2026,DFW Founders Podcast,victor@dfwfounders.fm,550.00,ACH,INV-1028
+P5024,28/05/2026,Vista Media Team,media@vistadfw.org,300.00,ACH,INV-1023
+P5025,29/05/2026,VICTOR REED,victor@dfwfounders.fm,550.00,card,INV-1018
+P5026,03/06/2026,BEN'S ROOFING,ben@bensroofingtx.com,900.00,card,
+P5027,04/06/2026,Maria Torres,maria@oakcliffrealty.com,1500.00,card,
+P5028,05/06/2026,DR. NADIA TORRES,hello@torresdental.com,1500.00,card,INV-1038
+P5029,06/06/2026,BEN ROMERO,info@romerolaw.com,2500.00,Zelle,
+P5030,07/06/2026,Renee Rivera,renee@gritandgrace.fm,300.00,ACH,INV-1024
+P5031,08/06/2026,Pecan Builders LLC,ethan@pecan.build,1500.00,card,
+P5032,08/06/2026,Bennett Insurance,wes@bennettinsures.com,2500.00,ACH,INV-1033
+P5033,08/06/2026,Renee Rivera,renee@gritandgrace.fm,300.00,card,INV-1031
+P5034,08/06/2026,Leah Nguyen DDS,leah@nguyendental.com,1500.00,card,INV-1030
+P5035,10/06/2026,CANYON WP,wtorres@canyonwp.com,2500.00,card,
+P5036,13/06/2026,NINA WEBB,nwebb@rosewoodptdallas.com,2500.00,card,INV-1035
+P5037,13/06/2026,Silverleaf,carmen@silverleafmedspa.com,1500.00,card,
+P5038,14/06/2026,Vista DFW,media@vistadfw.org,300.00,card,INV-1029
+P5039,14/06/2026,Beacon Barbers,trent@beaconbarbers.com,900.00,card,INV-1026
+P5040,19/06/2026,MAGNOLIA MED SPA,tasha@magnoliamedspa.com,900.00,Zelle,INV-1045
+P5041,19/06/2026,Vista Church,media@vistadfw.org,270.00,ACH,INV-1040
+P5042,20/06/2026,Grit & Grace,renee@gritandgrace.fm,300.00,card,
+P5043,22/06/2026,MAGNOLIA MEDSPA,tasha@magnoliamedspa.com,900.00,Zelle,INV-1045
+P5044,23/06/2026,BEACON BARBERSHOP,trent@beaconbarbers.com,900.00,Zelle,INV-1044
+P5045,24/06/2026,BRIGHTWATER FITNESS,trent@brightwaterfit.co,900.00,card,INV-1047
+P5046,30/06/2026,VISTA CHURCH,media@vistadfw.org,270.00,card,INV-1043
+P5047,01/07/2026,NGUYEN FAMILY LAW,mnguyen@nguyenfamilylaw.com,900.00,ACH,
+P5048,04/07/2026,KINDRED CREATIVE LLC,kelsey@kindredmktg.com,900.00,ACH,Kindred Jun invoices
+P5049,11/07/2026,Vista Church,media@vistadfw.org,270.00,card,INV-1059
+P5050,11/07/2026,Cedar Lab,jen@thecedarlab.coffee,900.00,Zelle,INV-1049
+P5051,11/07/2026,Vista Church,media@vistadfw.org,270.00,card,INV-1048
+P5052,13/07/2026,Bluebonnet Gym,reggie@bluebonnetgym.co,900.00,card,
+P5053,16/07/2026,Greenway Roasters,sofia@greenwaycoffee.com,900.00,card,
+P5054,16/07/2026,WES TORRES,wtorres@canyonwp.com,2500.00,Zelle,INV-1054
+P5055,17/07/2026,Renee Rivera,renee@gritandgrace.fm,300.00,ACH,INV-1051
+P5056,20/07/2026,Victor Reed,victor@dfwfounders.fm,550.00,ACH,INV-1050
+P5057,20/07/2026,Dr. Priya Okafor,pokafor@parksidefamilytherapy.com,1500.00,card,
+P5058,21/07/2026,DR. LEAH NGUYEN,leah@nguyendental.com,1500.00,card,INV-1063
+P5059,22/07/2026,Ridgeway Bridal Boutique,ivy@ridgewaybridal.com,900.00,Zelle,INV-1052
+P5060,22/07/2026,NGUYENS AUTO,mateo@nguyensautospa.com,900.00,Zelle,
+P5061,23/07/2026,ROSEWOOD PHYSICAL THERAPY,nwebb@rosewoodptdallas.com,2000.00,card,INV-1055
+P5062,23/07/2026,Bennett Insurance Group,wes@bennettinsures.com,2500.00,Zelle,INV-1053
+P5063,25/07/2026,Vista Media Team,media@vistadfw.org,270.00,card,
+P5064,26/07/2026,Brightwater Fit,trent@brightwaterfit.co,900.00,card,INV-1070
+P5065,29/07/2026,VICTOR MOORE,media@vistadfw.org,270.00,ACH,INV-1076
+P5066,30/07/2026,Vista Church,media@vistadfw.org,270.00,ACH,INV-1071
+P5067,31/07/2026,SILVERLEAF MED SPA,carmen@silverleafmedspa.com,1500.00,Zelle,INV-1072
+P5068,31/07/2026,OAK CLIFF REALTY,maria@oakcliffrealty.com,1500.00,card,INV-1061
+P5069,01/08/2026,VICTOR REED,victor@dfwfounders.fm,550.00,ACH,INV-1077
+P5071,02/08/2026,RENEE RIVERA,,900.00,Zelle,july sessions
+P5072,04/08/2026,KINDRED CREATIVE LLC,kelsey@kindredmktg.com,2700.00,ACH,Kindred Jul invoices
+P5073,06/08/2026,Nguyen Family Law PLLC,mnguyen@nguyenfamilylaw.com,900.00,Zelle,INV-1075
+P5074,06/08/2026,PECAN BUILDERS,ethan@pecan.build,1500.00,ACH,
+P5075,08/08/2026,Canyon Wealth,wtorres@canyonwp.com,2500.00,card,INV-1082
+P5076,08/08/2026,Andre's Roofing,andre@andresroofingtx.com,900.00,ACH,INV-1086
+P5077,08/08/2026,Rosewood Physical Therapy,nwebb@rosewoodptdallas.com,2500.00,card,INV-1080
+P5078,09/08/2026,TRENT SULLIVAN,trent@beaconbarbers.com,900.00,card,
+P5079,10/08/2026,Torres Dental,hello@torresdental.com,1500.00,Zelle,INV-1073
+P5080,11/08/2026,Magnolia Medspa,tasha@magnoliamedspa.com,900.00,card,
+P5081,12/08/2026,VISTA DFW,media@vistadfw.org,270.00,Zelle,
+P5082,13/08/2026,Bennett Insurance Group,wes@bennettinsures.com,2500.00,Zelle,INV-1081
+P5083,16/08/2026,Victor Reed,victor@dfwfounders.fm,550.00,ACH,INV-1090
+P5084,18/08/2026,Renee Rivera,renee@gritandgrace.fm,300.00,ACH,
+P5085,21/08/2026,Vista DFW,media@vistadfw.org,270.00,card,INV-1084
+P5086,22/08/2026,BEN'S ROOFING,ben@bensroofingtx.com,900.00,card,
+P5087,23/08/2026,VICTOR MOORE,media@vistadfw.org,270.00,Zelle,INV-1097
+P5088,23/08/2026,Cedarlab Coffee,jen@thecedarlab.coffee,900.00,card,INV-1091
+P5089,26/08/2026,RENEE RIVERA,renee@gritandgrace.fm,300.00,ACH,INV-1103
+P5090,29/08/2026,NGUYEN LAW,mnguyen@nguyenfamilylaw.com,900.00,ACH,INV-1100
+P5091,30/08/2026,MAGNOLIA MEDSPA,tasha@magnoliamedspa.com,900.00,card,INV-1095
+P5092,30/08/2026,Greenway Coffee Roasters,sofia@greenwaycoffee.com,900.00,Zelle,INV-1099
+P5093,31/08/2026,PASTOR VICTOR MOORE,media@vistadfw.org,270.00,card,INV-1102
+P5094,02/09/2026,Beacon Barbers,trent@beaconbarbers.com,900.00,Zelle,
+P5095,02/09/2026,BLUEBONNET GYM,reggie@bluebonnetathletics.com,900.00,ACH,INV-1096
+P5096,02/09/2026,Hassans Auto,reggie@hassansautospa.com,900.00,ACH,INV-1111
+P5097,02/09/2026,Canyon Wealth Partners,wtorres@canyonwp.com,2500.00,Zelle,INV-1110
+P5098,03/09/2026,KINDRED CREATIVE LLC,kelsey@kindredmktg.com,900.00,ACH,Kindred Aug invoices
+P5099,04/09/2026,G&G PODCAST,renee@gritandgrace.fm,300.00,card,INV-1093
+P5100,05/09/2026,Nguyen's Auto,mateo@nguyensautospa.com,900.00,card,INV-1094
+P5101,08/09/2026,NINA WEBB,nwebb@rosewoodptdallas.com,2500.00,Zelle,
+P5102,08/09/2026,Dr Nguyen,leah@nguyendental.com,1500.00,ACH,
+P5103,09/09/2026,Ridgeway Bridal Boutique,ivy@ridgewaybridal.com,900.00,card,
+P5104,10/09/2026,VICTOR REED,victor@dfwfounders.fm,550.00,Zelle,INV-1104
+P5105,11/09/2026,Maria Torres,maria@oakcliffrealty.com,1500.00,card,
+P5106,12/09/2026,Parkside Family Therapy,pokafor@parksidefamilytherapy.com,1500.00,card,INV-1106
+P5107,12/09/2026,Nadia Torres DDS,hello@torresdental.com,1500.00,card,INV-1118
+P5108,14/09/2026,Brightwater,trent@brightwaterfit.co,900.00,card,INV-1105
+P5109,16/09/2026,G&G PODCAST,renee@gritandgrace.fm,300.00,card,INV-1123
+P5110,17/09/2026,DFW FOUNDERS PODCAST,victor@dfwfounders.fm,550.00,Zelle,INV-1117
+P5111,18/09/2026,ANDRE RAMIREZ,,450.00,Zelle,half now half later
+P5112,19/09/2026,OAK CLIFF REALTY,maria@oakcliffrealty.com,1500.00,ACH,INV-1127
+P5113,20/09/2026,G&G Podcast,renee@gritandgrace.fm,300.00,Zelle,
+P5114,21/09/2026,BEN NOVAK,ben@bensroofingtx.com,900.00,ACH,INV-1125
+P5115,29/09/2026,JEN LOPEZ,jen@thecedarlab.coffee,900.00,Zelle,
+P5116,29/09/2026,SILVERLEAF MEDSPA,carmen@silverleafmedspa.com,1500.00,Zelle,
+P5117,30/09/2026,Grit & Grace Podcast,renee@gritandgrace.fm,300.00,ACH,
+P5118,02/10/2026,GREENWAY COFFEE ROASTERS,sofia@greenwaycoffee.com,900.00,Zelle,INV-1133
+P5119,04/10/2026,KINDRED CREATIVE LLC,kelsey@kindredmktg.com,900.00,ACH,Kindred Sep invoices
+P5120,04/10/2026,Vista Media Team,media@vistadfw.org,270.00,Zelle,
